@@ -1,0 +1,56 @@
+﻿<Window x:Class="PoEValuablesHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+		DataContext="this"
+        FontSize="16"
+        Title="MainWindow" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+	<StackPanel Orientation="Horizontal">
+		<StackPanel Orientation="Vertical">
+			<GroupBox Header="User" HorizontalAlignment="Left" VerticalAlignment="Top">
+				<StackPanel>
+					<DockPanel LastChildFill="False">
+						<TextBox Text="" x:Name="AccountTextBox" DockPanel.Dock="Right" Width="150pt" VerticalAlignment="Center"/>
+						<Label Content="Account Name" DockPanel.Dock="Right"/>
+					</DockPanel>
+					<DockPanel LastChildFill="False">
+						<PasswordBox Password="" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center"/>
+						<Label Content="POESESSID" DockPanel.Dock="Right" />
+					</DockPanel>
+					<DockPanel LastChildFill="False">
+						<TextBox Text="" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center"/>
+						<Label Content="Tab Names" DockPanel.Dock="Right"/>
+					</DockPanel>
+				</StackPanel>
+			</GroupBox>
+			<GroupBox Header="Minimum prices">
+				<StackPanel>
+					<DockPanel LastChildFill="False">
+						<TextBox Text="" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center"/>
+						<Label Content="Prophesies" DockPanel.Dock="Right"/>
+					</DockPanel>
+					<DockPanel LastChildFill="False">
+						<TextBox Text="" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center"/>
+						<Label Content="Unique Items" DockPanel.Dock="Right"/>
+					</DockPanel>
+					<DockPanel LastChildFill="False">
+						<TextBox Text="" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center"/>
+						<Label Content="Skill Gems" DockPanel.Dock="Right"/>
+					</DockPanel>
+					<DockPanel LastChildFill="False">
+						<TextBox Text="" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center"/>
+						<Label Content="Base Types" DockPanel.Dock="Right"/>
+					</DockPanel>
+				</StackPanel>
+			</GroupBox>
+			<DockPanel>
+				<Button x:Name="Apply" Content="Button" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="5" />
+			</DockPanel>
+		</StackPanel>
+		<GroupBox Header="Valuable Items">
+			<ListBox x:Name="ValuableItems" Width="200pt" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+		</GroupBox>
+	</StackPanel>
+</Window>
