@@ -12,5 +12,10 @@ namespace PoEValuablesHelper
             InitializeComponent();
             DataContext = this;
         }
+
+        private void SaveConfig(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.Save();
+        }
     }
 }

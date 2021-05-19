@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:poEValuablesHelper="clr-namespace:PoEValuablesHelper"
         mc:Ignorable="d"
 		DataContext="this"
         FontSize="16"
@@ -12,15 +13,15 @@
 			<GroupBox Header="User" HorizontalAlignment="Left" VerticalAlignment="Top">
 				<StackPanel>
 					<DockPanel LastChildFill="False">
-						<TextBox Text="" x:Name="AccountTextBox" DockPanel.Dock="Right" Width="150pt" VerticalAlignment="Center"/>
+						<TextBox Text="{Binding Source={x:Static poEValuablesHelper:Settings.Default}, Path=AccountName, Mode=TwoWay}" x:Name="AccountTextBox" DockPanel.Dock="Right" Width="150pt" VerticalAlignment="Center" LostFocus="SaveConfig"/>
 						<Label Content="Account Name" DockPanel.Dock="Right"/>
 					</DockPanel>
 					<DockPanel LastChildFill="False">
-						<PasswordBox Password="" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center"/>
+						<TextBox Text="{Binding Source={x:Static poEValuablesHelper:Settings.Default}, Path=SessionId, Mode=TwoWay}" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center" LostFocus="SaveConfig"/>
 						<Label Content="POESESSID" DockPanel.Dock="Right" />
 					</DockPanel>
 					<DockPanel LastChildFill="False">
-						<TextBox Text="" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center"/>
+						<TextBox Text="{Binding Source={x:Static poEValuablesHelper:Settings.Default}, Path=TabNames, Mode=TwoWay}" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center" LostFocus="SaveConfig"/>
 						<Label Content="Tab Names" DockPanel.Dock="Right"/>
 					</DockPanel>
 				</StackPanel>
@@ -28,25 +29,25 @@
 			<GroupBox Header="Minimum prices">
 				<StackPanel>
 					<DockPanel LastChildFill="False">
-						<TextBox Text="" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center"/>
+						<TextBox Text="{Binding Source={x:Static poEValuablesHelper:Settings.Default}, Path=ProphesiesFloor, Mode=TwoWay}" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center" LostFocus="SaveConfig"/>
 						<Label Content="Prophesies" DockPanel.Dock="Right"/>
 					</DockPanel>
 					<DockPanel LastChildFill="False">
-						<TextBox Text="" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center"/>
+						<TextBox Text="{Binding Source={x:Static poEValuablesHelper:Settings.Default}, Path=UniqueItemsFloor, Mode=TwoWay}" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center" LostFocus="SaveConfig"/>
 						<Label Content="Unique Items" DockPanel.Dock="Right"/>
 					</DockPanel>
 					<DockPanel LastChildFill="False">
-						<TextBox Text="" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center"/>
+						<TextBox Text="{Binding Source={x:Static poEValuablesHelper:Settings.Default}, Path=SkillGemsFloor, Mode=TwoWay}" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center" LostFocus="SaveConfig"/>
 						<Label Content="Skill Gems" DockPanel.Dock="Right"/>
 					</DockPanel>
 					<DockPanel LastChildFill="False">
-						<TextBox Text="" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center"/>
+						<TextBox Text="{Binding Source={x:Static poEValuablesHelper:Settings.Default}, Path=BaseTypesFloor, Mode=TwoWay}" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center" LostFocus="SaveConfig"/>
 						<Label Content="Base Types" DockPanel.Dock="Right"/>
 					</DockPanel>
 				</StackPanel>
 			</GroupBox>
 			<DockPanel>
-				<Button x:Name="Apply" Content="Button" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="5" />
+				<Button Content="Check Items" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="5" />
 			</DockPanel>
 		</StackPanel>
 		<GroupBox Header="Valuable Items">
