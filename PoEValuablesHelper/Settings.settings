@@ -23,5 +23,8 @@
     <Setting Name="BaseTypesFloor" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">10</Value>
     </Setting>
+    <Setting Name="League" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Standard</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

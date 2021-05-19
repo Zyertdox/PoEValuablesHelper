@@ -24,6 +24,10 @@
 						<TextBox Text="{Binding Source={x:Static poEValuablesHelper:Settings.Default}, Path=TabNames, Mode=TwoWay}" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center" LostFocus="SaveConfig"/>
 						<Label Content="Tab Names" DockPanel.Dock="Right"/>
 					</DockPanel>
+					<DockPanel LastChildFill="False">
+						<TextBox Text="{Binding Source={x:Static poEValuablesHelper:Settings.Default}, Path=League, Mode=TwoWay}" DockPanel.Dock="Right" Width="{Binding Width, ElementName=AccountTextBox}" VerticalAlignment="Center" LostFocus="SaveConfig"/>
+						<Label Content="League" DockPanel.Dock="Right"/>
+					</DockPanel>
 				</StackPanel>
 			</GroupBox>
 			<GroupBox Header="Minimum prices">
@@ -47,11 +51,18 @@
 				</StackPanel>
 			</GroupBox>
 			<DockPanel>
-				<Button Content="Check Items" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="5" />
+				<Button Content="Check Items" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="5" Padding="5,2,5,2" Click="CheckItems" />
 			</DockPanel>
 		</StackPanel>
 		<GroupBox Header="Valuable Items">
-			<ListBox x:Name="ValuableItems" Width="200pt" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				<Border x:Name="HeightHelperPanel" Grid.Row="0">
+					<ListBox x:Name="ValuableItems" Width="200pt" ScrollViewer.VerticalScrollBarVisibility="Visible" ItemsSource="{Binding ValuableItemsList}" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Height="{Binding Path=ActualHeight, ElementName=HeightHelperPanel}" SelectionChanged="CopyItemNameToClipboard"/>
+				</Border>
+			</Grid>
 		</GroupBox>
 	</StackPanel>
 </Window>

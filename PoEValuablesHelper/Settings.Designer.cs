@@ -106,5 +106,17 @@ namespace PoEValuablesHelper {
                 this["BaseTypesFloor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Standard")]
+        public string League {
+            get {
+                return ((string)(this["League"]));
+            }
+            set {
+                this["League"] = value;
+            }
+        }
     }
 }
